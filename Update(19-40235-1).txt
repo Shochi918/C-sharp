@@ -1,0 +1,226 @@
+Task 1
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Labtask
+{
+    class Employee
+    {
+        string name; 
+        int id;
+        int salary;
+
+        public Employee() 
+        {
+        }
+        public Employee(string name, int id, int salary ) 
+        {
+            this.name = name;
+            this.id = id;
+            this.salary = salary;
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine("Employee Name: " + name);
+            Console.WriteLine("ID: " + id);
+            Console.WriteLine("Salary: " + salary);
+        }
+        public void ListOfEmployee(params object[] e) 
+        {
+            for (int i = 0; i < e.Length; i++)
+            {
+                Console.WriteLine("Name : " + e[i]);
+            }
+
+        }
+
+
+    }
+}
+
+---------------------------------------------main class------------------------------------
+
+using System;
+
+namespace Labtask
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee person = new Employee();
+            person.ListOfEmployee("Suchi", "Akter");
+
+            Employee person1 = new Employee("Shochi", 12345, 48222); 
+            Employee person2 = new Employee("Akter", 92422, 20000);
+
+            person1.ShowInfo();
+            person2.ShowInfo();
+
+        }
+    }
+}
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Task 2
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cgpa_counter
+{
+    class SemesterDetails
+    {
+        String a;
+        String b;
+        int c;
+        float d;
+
+        public SemesterDetails()
+        {
+            Console.WriteLine("Error");
+        }
+        public SemesterDetails(String a, String b, int c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        public void showInfo()
+        {
+            Console.WriteLine("Name: " + a);
+            Console.WriteLine("ID: " + b);
+            Console.WriteLine("Semester : " + c);
+        }
+        public void GPACalculator(params double[] x)
+        {
+            double sum = 0;
+
+            for (int i = 0; i < x.Length; i++)
+            {
+                sum = sum + x[i];
+            }
+            d = (float)sum / c;
+
+            Console.WriteLine("Cgpa: " + d);
+        }
+        public void ListOfSubjects(params object[] y)
+        {
+            Console.WriteLine("List of Subjects: ");
+            for (int i = 0; i <= y.Length; i++)
+            {
+
+                Console.WriteLine(y[i]);
+            }
+        }
+
+    }
+}
+
+
+---------------------------------------------main class------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cgpa_counter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SemesterDetails p = new SemesterDetails();
+            SemesterDetails p1 = new SemesterDetails("Shochi", "19-40235-1", 7);
+       
+            p1.showInfo();
+            p1.GPACalculator(3.10,3.25,3.50,3.12,3.56,3.60,3.25);
+            p1.ListOfSubjects("ENGLISH READING SKILLS & PUBLIC SPEAKING", "PHYSICS 1", "PHYSICS 1 LAB", "OBJECT ORIENTED PROGRAMMING 1 (JAVA)");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------
+ Lab3
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Labtask
+{
+    class SwappingValues
+    {
+        public void SwapValues1(ref int a, ref int b)
+        {
+            Console.WriteLine("Before SwapValues1 using Ref a=" + a + " b=" + b);
+            int T;
+            T = a;
+            a = b;
+            b = T;
+            Console.WriteLine("After SwapValues1 using Ref a=" + a + " b=" + b);
+        }
+        public void SwapValues2(out int a, out int b)
+        {
+            a = 30;
+            b = 60;
+            Console.WriteLine("Before SwapValues1 using Out a=" + a + " b=" + b);
+            int T;
+            T = a;
+            a = b;
+            b = T;
+            Console.WriteLine("After SwapValues1 using Out a=" + a + " b=" + b);
+        }
+    }
+}
+
+
+---------------------------------------------main class------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Labtask
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SwappingValues s1 = new SwappingValues();
+            int a = 10;
+            int b = 20;
+
+            s1.SwapValues1(ref a, ref b);
+
+            s1.SwapValues2(out a, out b);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
